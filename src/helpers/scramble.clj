@@ -10,16 +10,15 @@
 
 (defn take-input [input] 
   (println "Please input the " input " string:")
-  (->>
-   (read-line)
-   #_{:clj-kondo/ignore [:inline-def]}
-   (def sort-str)
-   )
+  (->> (read-line)
+    #_{:clj-kondo/ignore [:inline-def]}
+    (def sort-str)
+    )
   )
 
 (def first-str (take-input "first"))
 (def second-str (take-input "second"))
-(println (str first-str) (str second-str))
+(isScramble first-str second-str)
 
 (->> sort-str
      (str/split-lines)
